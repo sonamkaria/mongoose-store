@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome to Pixel Beauty </title>
+</head>
+
+<body><h1>All Products Home Page</h1>
+    <button><a href="/products/new">add</a></button> 
+    <div class="container">
+        
+       
+
+        
+        <% products.forEach(product=> { %>
+            <a href="/products/<%= product._id %>">
+                <%= product.name%>
+            </a>
+          
+                <img src="<%=product.img%>" alt="">
+                <%})%>
+         
+           
+    </div>
+</body>
+
+</html>

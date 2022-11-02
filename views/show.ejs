@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Products</title>
+</head>
+
+<body>
+  <nav>
+    <a href="/products">Back to Books Index</a>
+  </nav>
+  <h1>
+    <%=product.name%>
+  </h1>
+
+  <img src="<%= product.img %>" alt="">
+
+  <br />
+  Description: <%= product.description %>
+    <br />
+    Price: <%= product.price %>
+      <br />
+      Quantity: <%= product.qty %>
+        <br />
+        <button>BUY</button>
+        <br />
+        <a href="/products/<%= product._id %>/edit">EDIT</a>
+        <form action="/products/<%= product._id %>?_method=DELETE" method="post">
+          <input type="submit" value="DELETE" />
+        </form>
+</body>
+
+</html>
