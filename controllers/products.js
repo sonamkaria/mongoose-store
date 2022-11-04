@@ -44,6 +44,7 @@ productRouter.get("/new", (req, res) => {
 // UPDATE
 productRouter.put("/:id", (req, res) => {
     //req.body.qty = (req.body.qty === 0) ? "outof stock" : req.body.qty;
+    
     Product.findByIdAndUpdate(
       req.params.id,
       req.body,
@@ -53,6 +54,21 @@ productRouter.put("/:id", (req, res) => {
       res.redirect(`/products/${req.params.id}`);
     })
   })
+
+// which will take another put route attached to another form with a buy button inside, that put route can then change product.qty
+
+productRouter.put("/:id", (req, res) => {
+  req.body.qty = (req.body.qty === 0) ? "outof stock" : req.body.qty;
+
+Product.findByIdAndUpdate(
+     qty1=req.body.qty,
+(err, products) => {
+  // redirect user to showpage
+  res.redirect(`/products/${req.params.id}`);
+})
+
+  })
+  
 
   // CREATE
 productRouter.post("/", (req, res) => {

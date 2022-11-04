@@ -24,9 +24,16 @@
     <br />
     Price: <%= product.price %>
       <br />
-      Quantity: <%= product.qty %>
+      
+        
+
+
+        <form action="/products/<%=product._id%>?_method=UPDATE" method="put">
+        Quantity: <%= product.qty %>
         <br />
         <button>BUY</button>
+    
+      </form>
         <br />
         <a href="/products/<%= product._id %>/edit">EDIT</a>
         <form action="/products/<%= product._id %>?_method=DELETE" method="post">
